@@ -10,7 +10,7 @@ To run the steps below, you'll need a 'connected system' which has internet cone
 
 ## Assumptions
 
-Assumptions is to have an isolated machine with following features:
+Desire to run SAP Fiori tools on an isolated system with following features:
 
 - Windows 10 image
 - No internet connection
@@ -27,7 +27,7 @@ Install node on the connected system, but keep a copy, you will later need to co
 
 ### Install Verdaccio
 
-Verdaccio is a lightweight Node.js private proxy registry and we can use it to collect node modules on the connected system and later to host the module registry in the isolated system. Here in the preparation we install Verdaccio as local module in a new folder. This allows us to copy the installation later to the isolated system. To install it, run the commands:
+Verdaccio is a lightweight node module registry that runs locally and we can use it to collect node modules on the connected system and later to host the module registry in the isolated system. Here, in the preparation, we install Verdaccio as local module in a new folder. This allows us to copy the installation later to the isolated system. To install it, run the commands:
 
 ```
 >mkdir verdaccio
