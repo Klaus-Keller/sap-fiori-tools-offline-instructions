@@ -4,7 +4,9 @@ Guide to use SAP Fiori tools offline.
 
 ## Description
 
-SAP Fiori tools team recently received customer requests asking for instructions on how to work with SAP Fiori tools, when no internet connection is present. This repository addresses this request by providing information on how to setup such an environment.
+The SAP Fiori tools team recently received customer requests asking for instructions on how to work with SAP Fiori tools, when no internet connection is present. This repository addresses this request by providing information on how to setup such an environment.
+
+To run the steps below, you'll need a 'connected system' which has internet conection and the 'isolated sysyem' that will host the development environment without connection to the internet. Ideally, both systems, the connected system and the isolated system, are similar in terms of operating system and architecture (32bit/64bit). 
 
 ## Assumptions
 
