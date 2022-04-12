@@ -6,7 +6,7 @@ Guide to use SAP Fiori tools offline.
 
 The SAP Fiori tools team recently received customer requests asking for instructions on how to work with SAP Fiori tools, when no internet connection is present. This repository addresses this request by providing information on how to setup such an environment.
 
-To run the steps below, you'll need a 'connected system' which has internet conection and the 'isolated sysyem' that will host the development environment without connection to the internet. Ideally, both systems, the connected system and the isolated system, are similar in terms of operating system and architecture (32bit/64bit). 
+To run the steps below, you'll need a 'connected system' which has internet connection and the 'isolated system' that will host the development environment without connection to the internet. Ideally, both systems, the connected system and the isolated system, are similar in terms of operating system and architecture (32bit/64bit).
 
 ## Assumptions
 
@@ -23,7 +23,12 @@ Desire to run SAP Fiori tools on an isolated system with following features:
 ### Node.js
 
 Download Node.js version 14.x.y from https://nodejs.org/en/download/releases/. At the time of writing this document this was https://nodejs.org/download/release/v14.19.1/.
-Install node on the connected system, but keep a copy, you will later need to copy the installer also to the isolated system and install it there.
+Install node on the connected system, but keep a copy, you will later need to copy the installer also to the isolated system and install it there. In case you do not have permissions to install software on the connected system, you can also download and extract the zip archive instead of the msi installer and do a manual setup[^1].
+
+[^1]:
+    Instructions to install node without admin permissions can be found for instance at:  
+    https://zwbetz.com/install-nodejs-on-windows-without-admin-access/  
+    https://stackoverflow.com/questions/37029089/how-to-install-nodejs-lts-on-windows-as-a-local-user-without-admin-rights
 
 ### Install Verdaccio
 
