@@ -22,7 +22,7 @@ Desire to run SAP Fiori tools on an isolated system with following features:
 
 ### Node.js
 
-Download Node.js version 14.x.y from https://nodejs.org/en/download/releases/. At the time of writing this document this was https://nodejs.org/download/release/v14.19.1/.
+Download Node.js version 14.x.y from https://nodejs.org/en/download/releases/. At the time of writing this document this was https://nodejs.org/download/release/v14.20.0/.
 Install node on the connected system, but keep a copy, you will later need to copy the installer also to the isolated system and install it there. In case you do not have permissions to install software on the connected system, you can also download and extract the zip archive instead of the msi installer and do a manual setup[^1].
 
 [^1]:
@@ -60,8 +60,6 @@ In the terminal you started Verdaccio you can see the host and port on which it 
 
 In order to get copies of all required node modules for development using SAP Fiori tools, you need to install them once through the Verdaccio registry we just installed.
 
- <!-- projects under [`sap-fiori-tools-modules`](https://github.com/Klaus-Keller/sap-fiori-tools-offline/tree/main/sap-fiori-tools-modules) in this repository. -->
-
 But before, we need to make sure the the cache for node modules is empty, otherwise packages might be taken from the local npm cache and not copied to the Verdaccio storage. To clear the cache run command
 
 ```shell
@@ -70,50 +68,20 @@ npm cache clear --force
 
 If you are using other node package managers, you might need to clean their cache as well. I use yarn and had to run `yarn cache clean` to avoid local cached modules being used.
 
-Now we need to do the installation of node modules in order to fill up the Verdaccio storage. If you are still in `verdaccio` folder in terminal you should go one folder up. Now create a new temporary folder and switch to it, e.g.
+Now we need to do the installation of node modules in order to fill up the Verdaccio storage. The list of all required node modules can be found at [dependencies.json](dependencies.json), but for convenience you'll find the command as one long string below. If you are still in `verdaccio` folder in terminal you should go one folder up. Now create a new temporary folder and switch to it, e.g.
 
 ```shell
 mkdir sap-fiori-tools-modules
 cd sap-fiori-tools-modules
 ```
 
-Now create a new text file and name it `package.json` with the following content:
-
-```json
-{
-  "name": "sap-fiori-tools-modules",
-  "version": "0.0.1",
-  "dependencies": {
-    "@sap/generator-fiori": "latest",
-    "@ui5/cli": "^2.14.1",
-    "@ui5/fs": "^2.0.6",
-    "@ui5/logger": "^2.0.1",
-    "@sap/eslint-plugin-ui5-jsdocs": "2.0.5",
-    "@sap/ux-specification": "latest",
-    "@sap/ux-ui5-fe-mockserver-middleware": "1",
-    "@sap/ux-ui5-tooling": "1",
-    "@sapui5/ts-types": "1.92.2",
-    "rimraf": "3.0.2"
-  }
-}
-```
-
-In the terminal in folder `sap-fiori-tools-modules` run command
+In the terminal in folder `sap-fiori-tools-modules` run command to install all required modules:
 
 ```shell
-npm install --registry=http://localhost:4873/
+npm install @sap/abap-deploy@^0.10.27 @sap/eslint-plugin-ui5-jsdocs@2.0.5 @sap/generator-fiori@latest @sap/ux-specification@latest @sap/ux-ui5-fe-mockserver-middleware@1 @sap/ux-ui5-tooling@1 @sapui5/ts-types@1.92.2 @ui5/builder@^2.11.5 @ui5/cli@^2.14.1 @ui5/fs@^2.0.6 @ui5/logger@^2.0.1 @ui5/project@^2.6.0 @ui5/server@2.4.0 rimraf@3.0.2 yo@^4.3.0 --registry=http://localhost:4873/
 ```
 
 This assumes your Verdaccio is listening to http://localhost:4873/, if this is not the case, please adjust accordingly.
-
-<!-- In the root of this package there is a npm script to install all packages, it assumes Verdaccio to run at http://localhost:4873/. You might click the link to check whether Verdaccio is up and running.
-
-Now run the script
-
-```shell
->npm run install-all
-``` -->
-<!-- In case Verdaccio is running on a different host or port, you can manually switch to each folder under `sap-fiori-tools-nmodules` and execute `npm install --registry=http://<VERDACCIO_HOST>:<VERDACCIO_PORT>/` -->
 
 The storage folder should now be filled with all requested modules. Create an zip archive `storage.zip` of the storage folder, default location on Windows is:
 
