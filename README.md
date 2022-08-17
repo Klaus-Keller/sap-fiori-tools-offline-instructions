@@ -78,7 +78,7 @@ cd sap-fiori-tools-modules
 In the terminal in folder `sap-fiori-tools-modules` run command to install all required modules:
 
 ```shell
-npm install @sap/abap-deploy@^0.10.27 @sap/eslint-plugin-ui5-jsdocs@2.0.5 @sap/generator-fiori@latest @sap/ux-specification@latest @sap/ux-ui5-fe-mockserver-middleware@1 @sap/ux-ui5-tooling@1 @sapui5/ts-types@1.92.2 @ui5/builder@^2.11.5 @ui5/cli@^2.14.1 @ui5/fs@^2.0.6 @ui5/logger@^2.0.1 @ui5/project@^2.6.0 @ui5/server@2.4.0 rimraf@3.0.2 yo@^4.3.0 --registry=http://localhost:4873/
+npm install @sap/abap-deploy@^0.10.27 @sap/cds-compiler@3.1.0 @sap/eslint-plugin-ui5-jsdocs@2.0.5 @sap/generator-fiori@latest @sap/ux-specification@latest @sap/ux-ui5-fe-mockserver-middleware@1 @sap/ux-ui5-tooling@1 @sapui5/distribution-metadata@latest @sapui5/ts-types@latest @ui5/builder@^2.11.5 @ui5/cli@^2.14.10 @ui5/fs@^2.0.6 @ui5/logger@^2.0.1 @ui5/project@^2.6.0 @ui5/server@2.4.0 chokidar@3.5.3 rimraf@3.0.2 yo@^4.3.0 --registry=http://localhost:4873/
 ```
 
 This assumes your Verdaccio is listening to http://localhost:4873/, if this is not the case, please adjust accordingly.
