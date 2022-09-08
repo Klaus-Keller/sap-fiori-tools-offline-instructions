@@ -161,6 +161,8 @@ Install the SAP Fiori tools application generator node module globally by execut
 
 Copy and extract the zip file that contains the portable version of Visual Studio Code we have prepared in one of the previous steps to a location of your choice in the isolated system and start `<EXTRACT_LOCATION>\Code.exe`.
 
+To avoid error messages due to telemetry data, you can disable telemetry by opening the command palette and executing command `Fiori: Change Telemetry Settings` -> `Disable`.
+
 Now you should be able to generate and develop projects using SAP Fiori tools. In Visual Studio Code you can test this by opening command palette (menu 'View' -> 'Command Palette...') and enter 'Open Template Wizard'.
 
 ## What is still to do
